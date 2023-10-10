@@ -1,7 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import 'dotenv/config';
 import fs from 'fs';
 import {validateEmail} from './helpers.js'
 
@@ -9,7 +8,7 @@ import {validateEmail} from './helpers.js'
 
 const app = express();
 
-const PORT = process.env.PORT || 4000
+const PORT = 4000
 
 app.use(cors())
 app.use(express.json())
