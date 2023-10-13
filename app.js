@@ -3,12 +3,11 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import fs from 'fs';
 import {validateEmail} from './helpers.js'
-
-
+import 'dotenv/config'
 
 const app = express();
+const PORT = process.env.PORT
 
-const PORT = 4000
 
 app.use(cors())
 app.use(express.json())
