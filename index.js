@@ -4,6 +4,7 @@ import cors from 'cors';
 import fs from 'fs';
 import {validateEmail} from './helpers.js'
 import 'dotenv/config'
+import appCode from "./api/appCode.js"
 
 const app = express();
 const PORT = process.env.PORT
@@ -60,6 +61,8 @@ app.post('/signup', async (req, res) => {
     return res.status(500).json({ message: 'An error occurred during sending message' });
   }
 });
+
+app.use("/api/appCode", appCode)
 
 
 app.listen(PORT, () => {
